@@ -9,4 +9,4 @@ Features:
 - Efficient new point insertion into an existing t-SNE output
 
 #Example output
-![Screenshot](example.pdf)
+![Screenshot](example.png)
