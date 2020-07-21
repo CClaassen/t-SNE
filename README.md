@@ -8,5 +8,5 @@ Features:
 - Local perplexity scaling that complements global perplexity
 - Efficient new point insertion into an existing t-SNE output
 
-#Example output
+### Example output
 ![Screenshot](example.png)
