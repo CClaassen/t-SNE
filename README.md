@@ -12,4 +12,4 @@ Features:
 ![Screenshot](example.png)
 
 ### Example basic t-SNE output
-![Screenshot](example_features.png)
+![Screenshot](example_features.PNG)
