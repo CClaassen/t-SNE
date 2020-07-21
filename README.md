@@ -7,3 +7,6 @@ Features:
 - Exaggeration at the first and last few iterations
 - Local perplexity scaling that complements global perplexity
 - Efficient new point insertion into an existing t-SNE output
+
+#Example output
+![Screenshot](example.pdf)
