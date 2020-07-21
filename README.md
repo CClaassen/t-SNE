@@ -12,7 +12,4 @@ Features:
 ![Screenshot](example.png)
 
 ### Example of t-SNE output with local perplexity scaling and newly inserted points
-
-<p align="center">
-  ![Screenshot](example_features.PNG)
-</p>
+![Screenshot](example_features.PNG)
