@@ -75,11 +75,10 @@ function replicate_iris()
 
     #output_pdf(Y2, labels, "figure3_1")
     #output_pdf(Y, labels, "figure3_2")
-    graph = GF.plot(x=Y[:,1], y=Y[:,2], color=label, Guide.xlabel(""), Guide.ylabel(""), Guide.colorkey(title="Iris species"), Theme(point_size=0.7mm, highlight_width=0.1mm, key_position=:bottom))
-    graph2 = GF.plot(x=Y2[:,1], y=Y2[:,2], color=label, Guide.xlabel(""), Guide.ylabel(""), Guide.colorkey(title="Iris species"), Theme(point_size=0.7mm, highlight_width=0.1mm, key_position=:bottom))
-    draw(PDF("figure4.pdf", 15cm, 10cm), stack)
-
+    graph = GF.plot(x=Y[:,1], y=Y[:,2], color=labels, Guide.xlabel(""), Guide.ylabel(""), Guide.colorkey(title="Iris species"), Theme(point_size=0.7mm, highlight_width=0.1mm, key_position=:bottom))
+    graph2 = GF.plot(x=Y2[:,1], y=Y2[:,2], color=labels, Guide.xlabel(""), Guide.ylabel(""), Guide.colorkey(title="Iris species"), Theme(point_size=0.7mm, highlight_width=0.1mm, key_position=:bottom))
     stack = hstack(graph, graph2)
+    draw(PDF("figure3.pdf", 15cm, 10cm), stack)
 
     result = [res3 res4; res5 res6; res7 res8]
     output_csv(result, [], "table1")
