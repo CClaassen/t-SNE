@@ -151,7 +151,7 @@ function figure5_alt()
 end
 
 #Tests the quality of 50 inserted words, as respresented in table 5
-#Note: the geometric median does not converge for a single point in the test set
+#Note: the geometric median does not converge for one single point in the test set
 function table5()
     res = zeros(50, 2)
     res2 = zeros(50, 2)
