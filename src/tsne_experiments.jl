@@ -149,3 +149,37 @@ function figure5_alt()
     Y = tsne_main(X, 2, 10000, 35, local_p = true)
     output_pdf(Y, labels, "figure5_alt")
 end
+
+#Tests the quality of 50 inserted words, as respresented in table 5
+#Note: the geometric median does not converge for a single point in the test set
+function table5()
+    res = zeros(50, 2)
+    res2 = zeros(50, 2)
+    W, labels, words = import_words()
+    X = get_embeddings(words)
+    Y = tsne_main(X, 2, 10000, 35, local_p = true)
+
+    words2 = readdlm("test_words.csv", ',', String)
+    words2[1] = "honey"
+    X2 = [X; get_embeddings(words2)]
+
+    Y2 = tsne_main(X2, 2, 10000, 35, local_p = true)
+
+    #X2_test = X
+    #Y2_test = Y
+
+    for i=1:50
+        X, Y, labels = insert_point(X, Y, labels, words2[i], p = 15)
+        res[i,:] = eval_point(X,Y)
+        res2[i,:] = eval_point(X2[1:601+i,:],Y2[1:601+i,:])
+
+        #X2_test,Y2_test = [X2_test; X2[601+i,:]'], [Y2_test; Y2[601+i,:]']
+        #res2[i,:] = eval_point(X2_test,Y2_test)
+    end
+
+    t1, t2 = mean(res, dims=1), std(res, dims=1)
+    t3, t4 = mean(res2, dims=1), std(res2, dims=1)
+    result = [t1[1] t2[1] t1[2] t2[2]; t3[1] t4[1] t3[2] t4[2]]
+    output_csv(result, [], "table5")
+    return result
+end
