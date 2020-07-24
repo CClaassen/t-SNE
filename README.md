@@ -1,4 +1,4 @@
-# t-SNE / tsne in Julia
+# t-SNE in Julia
 An enhanced t-SNE / tsne implementation in Julia
 
 Features: 
